@@ -1,0 +1,8 @@
+先把磁盘格式化成ext4或者fat32格式
+
+然后fdisk -l查看
+
+sudo mount /dev/sdb5 /data
+
+
+

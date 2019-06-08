@@ -1,0 +1,61 @@
+Oracle基本概念以及入门
+
+
+1、什么是cluster
+
+一个cluster是由两个或是多个独立的、通过网络连接的servers组成的。几个硬件供应商多年以来提供了Cluster性能的各种需求。一些Clusters仅仅为了提供高可用性的，在当前活动的node发生故障时转移到次节点node。另一些是为了提供分布式的连接、工作的可扩展性。另一个Cluster的共同特点是，对于一个应用程序，它可以看做是一个单独的server。同样，管理几个servers应该尽可能像管理一个server一样简单。Cluster管理器软件提供了这种功能。
+
+如果是single server的nodes，文件必须存储在其各自node能访问的位置。存在有几个不同拓扑结构来解决数据访问的问题，这主要依赖于Cluster设计的主要目标。
+
+相互连接时一个物理的网络连接，作为每个Cluster节点直接的交互通信。
+
+简而言之，一个Cluster就是一组独立的servers，它们共同协作，组成一个single system。
+
+2、什么是Oracle real Application Cluster(RAC)
+
+RAC是一个软件可以使你通过运行多个依赖相同Database的Instance，使用Cluster硬件。数据库files被存放在物理或是逻辑上连接每个节点的磁盘上。以便于每个活动的Instance都可以对files进行读写操作。
+
+RAC软件管理着数据的访问。所以更改操作在Instances之间是被相互协调的，并且每个Instance看到的信息和数据镜像都是一致的。
+
+通过RAC结构，可以获得冗余，从而使得即使在一个系统crash或是不可访问时，应用程序也可通过其他Instance访问Database。
+
+3、为啥使用RAC
+
+RAC可以高度利用标准的Cluster，降低模块servers成本。
+
+RAC自动的提供了服务的工作量管理。应用程序的服务可以被分组或分类，组成商业组件完成应用工作任务。RAC中的服务可以是持续的、不间断的Database操作，并为多Instance上的多个服务提供支持。可以设计services到一个或多个Instance上运行，并且交替Instances可以用于备份Instances。如果主Instance失败，Oracle会将services从失败的Instance节点移动到活动的可替代的Instance上。Oracle也会自动的通过连接进行数据装载的平衡。
+
+RAC利用多个廉价的computers共同提供Database的服务，就像一个大的computer一样，服务于只有大规模SMP才能提供的各种应用。
+
+RAC是基于共享磁盘结构的，在需求上可以增加或缩减，而不需要人为的在Cluster中进行数据的分隔。并且RAC可以简单的增加、移出Cluster中的servers。
+
+
+
+Oracle RAC集群中的连个成员，即两台服务器。
+什么是RAC，楼上的已经有很专业的解释了，RAC的实质是多几点多instance共享datafile，属于主机级别的冗余，可有效提升Oracle性能，由于底层存储还是只有一份，所以一般和DataGuard一起使用。 
+
+就是有两台ORACLE服务器组成的一个RAC集群
+
+RAC，全称real application clusters，译为“实时应用集群”， 是Oracle新版数据库中采用的一项新技术，是高可用性的一种，也是Oracle数据库支持网格计算环境的核心技术。 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

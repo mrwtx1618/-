@@ -1,0 +1,20 @@
+临时使用：
+
+可以在使用pip的时候加参数-i https://pypi.tuna.tsinghua.edu.cn/simple
+
+例如：pip install -i https://pypi.tuna.tsinghua.edu.cn/simple gevent，这样就会从清华这边的镜像去安装gevent库。
+
+1、创建一个隐藏目录名字是  .pip
+
+mkdir ~/.pip
+
+2、进入pip的目录创建一个pip.conf的文件
+
+cd .pip====》touch pip.conf
+
+3、编辑pip.conf文件
+
+[global]
+index-url = http://pypi.douban.com/simple
+[install]
+trusted-host = pypi.douban.com

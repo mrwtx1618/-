@@ -1,0 +1,55 @@
+https://blog.csdn.net/weixin_40294256/article/details/79157838
+
+
+1）安装NVIDIA显卡
+
+打开命令窗口（ctrl+Alt+T）
+
+ sudo apt-get remove --purge nvidia*
+ sudo apt-get purge nvidia*
+
+  sudo add-apt-repository ppa:graphics-drivers/ppa
+
+  sudo apt-get update
+
+  sudo apt-get install nvidia-384 nvidia-settings
+
+  四行命令搞定
+
+  安装完毕后重启电脑reboot(有的时候需要输入密码:如果boot是enable的状态)，运行nvidia-smi，查看生效的显卡驱动
+
+nvidia-settings
+
+
+sudo prime-select intel
+在prime-select intel的状态下,nvidia-smi会报错
+
+sudo prime-select nvidia 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
