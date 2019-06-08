@@ -1,0 +1,15 @@
+cd到/home/wtx/Desktop/Git目录下
+mkdir python学习
+cd到python学习目录执行git init
+到Github主页上建立一个仓库:python_learn
+在python学习目录下执行:git remote add origin https://github.com/mrwtx1618/python_learn.git
+在python学习目录下执行git push -u origin master
+vim .git/config文件,增加以下三行:
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
+
+第一次push文件的时候需要执行:
+git push -u origin master
+
+以后只需要执行git push
